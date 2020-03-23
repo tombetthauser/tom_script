@@ -36,11 +36,17 @@
 # read
 clear
 
-echo "Here are all the files in the Users folder:"
+declare -i i=0
+declare -a TESTARRAY
+TESTARRAY[0]="cat"
+
+echo "Here are all the file indexes in the Users folder:"
 
 for entry in /Users/tombetthauser/*
 do
-  echo "$entry"
+  TESTARRAY+=($entry)
+  echo ${TESTARRAY[i]}
+  i=i+1
 done
 
 read

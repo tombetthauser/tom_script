@@ -47,18 +47,20 @@ echo "Well hello there little $name, what would you like to watch?"
 echo ""
 echo "Your current choices are:"
 echo "sonic"
+echo "random"
 echo ""
 read show
 
-while [ "$show" != "sonic" ]
+while [ "$show" != "sonic" ] && [ "$show" != "random" ]
 do
   clear
   echo ""
-  echo "Sorry $name, that show doesn't exist :("
+  echo "Sorry $name, that option doesn't exist :("
   echo "Can you try picking another show from this list?"
   echo ""
   echo "Your current choices are:"
   echo "sonic"
+  echo "random"
   echo ""
   read show
 done
@@ -69,4 +71,18 @@ then
   echo "You've chosen sonic, enjoy!"
   echo ""
   open ./sonic.mp4
+fi
+
+if [ "$show" = "random" ]
+then
+  # generate array of music videos in folder
+  # generate a random index number
+  # say what video you're playing
+  # play that video
+
+
+  echo ""
+  echo "You've chosen random, enjoy!"
+  echo ""
+
 fi
